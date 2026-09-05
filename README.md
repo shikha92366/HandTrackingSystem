@@ -1,4 +1,4 @@
-# ✋ Hand Tracking System Using Python & Computer Vision
+# Hand Tracking System Using Python & Computer Vision
 
 ### AI-Based Hand Gesture Recognition and ESP32 LED Control
 
