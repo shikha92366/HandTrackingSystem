@@ -34,7 +34,7 @@ The ESP32 receives the finger count and activates the corresponding LED.
 
 The following video demonstrates the complete working of the Hand Tracking System, including real-time hand gesture detection, finger counting, serial communication, and ESP32 LED control.
 
-![](https://github.com/user-attachments/assets/7c522c67-0783-40a0-829b-d96885ade400) 
+https://github.com/user-attachments/assets/7c522c67-0783-40a0-829b-d96885ade400
 
 
 
