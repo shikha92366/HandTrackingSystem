@@ -27,20 +27,13 @@ The recognized gesture is then transmitted from Python to the **ESP32 through US
 The ESP32 receives the finger count and activates the corresponding LED.
 
 ---
-
 # 📸 Project Gallery
 
-> Project images can be added here as the project gallery is updated.
+### 🎥 Project Demonstration
 
-| Hand Tracking | ESP32 LED Controller |
-|:---:|:---:|
-| Add project screenshot here | Add hardware photo here |
+The following video demonstrates the complete working of the Hand Tracking System, including real-time hand gesture detection, finger counting, serial communication, and ESP32 LED control.
 
-| Gesture Detection | LED Response |
-|:---:|:---:|
-| Add gesture screenshot here | Add LED response photo here |
-
----
+[▶️ Watch Project Demonstration](./demo/hand_tracking_demo.mp4)
 
 # 🎥 Demonstration
 
