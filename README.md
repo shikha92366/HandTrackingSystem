@@ -1,4 +1,4 @@
-# Hand Tracking System Using Python & Computer Vision
+#  Hand Tracking System Using Python & Computer Vision
 
 ### AI-Based Hand Gesture Recognition and ESP32 LED Control
 
@@ -27,77 +27,34 @@ The recognized gesture is then transmitted from Python to the **ESP32 through US
 The ESP32 receives the finger count and activates the corresponding LED.
 
 ---
+
 # 📸 Project Gallery
 
 ### 🎥 Project Demonstration
 
 The following video demonstrates the complete working of the Hand Tracking System, including real-time hand gesture detection, finger counting, serial communication, and ESP32 LED control.
 
-[▶️ Watch Project Demonstration](./demo/hand_tracking_demo.mp4)
+![](https://github.com/user-attachments/assets/7c522c67-0783-40a0-829b-d96885ade400)
 
-# 🎥 Demonstration
 
-The system works in real time:
-
-```text
-User Hand
-    ↓
-Laptop Camera
-    ↓
-OpenCV
-    ↓
-MediaPipe Hand Landmarker
-    ↓
-21 Hand Landmarks
-    ↓
-Finger Detection
-    ↓
-Finger Count (0–5)
-    ↓
-Gesture Stabilization
-    ↓
-Python Serial Communication
-    ↓
-USB Serial
-    ↓
-ESP32
-    ↓
-Corresponding LED
-````
-
----
-
-## 📂 Demo Gallery
-
-### Included Demonstrations
-
-* ✋ Real-time hand detection
-* 🖐️ Five-finger gesture detection
-* ☝️ One-finger gesture detection
-* ✌️ Two-finger gesture detection
-* 🤟 Three-finger gesture detection
-* 🖖 Four-finger gesture detection
-* ✊ Zero-finger gesture detection
-* 💡 ESP32 LED control
-* 📡 Python-to-ESP32 serial communication
 
 ---
 
 # ✨ Key Features
 
-* 🖐️ Real-time hand tracking
-* 🎯 Detection of 21 hand landmarks
-* 👈👉 Left and right hand identification
-* ☝️ Real-time finger detection
-* 🔢 Finger counting from 0 to 5
-* 🧠 Gesture stabilization using consecutive frames
-* 📊 Real-time FPS counter
-* 🖥️ Visual gesture information on screen
-* 🔌 Serial communication with ESP32
-* 💡 Control of 5 LEDs
-* ⚡ Real-time hardware response
-* 🐍 Python-based computer vision
-* 🤖 MediaPipe hand landmark detection
+- 🖐️ Real-time hand tracking
+- 🎯 Detection of 21 hand landmarks
+- 👈👉 Left and right hand identification
+- ☝️ Real-time finger detection
+- 🔢 Finger counting from 0 to 5
+- 🧠 Gesture stabilization using consecutive frames
+- 📊 Real-time FPS counter
+- 🖥️ Visual gesture information on screen
+- 🔌 Serial communication with ESP32
+- 💡 Control of 5 LEDs
+- ⚡ Real-time hardware response
+- 🐍 Python-based computer vision
+- 🤖 MediaPipe hand landmark detection
 
 ---
 
@@ -105,26 +62,26 @@ Corresponding LED
 
 ## 💻 Software
 
-| Technology          | Purpose                             |
-| ------------------- | ----------------------------------- |
-| Python              | Main programming language           |
-| OpenCV              | Camera capture and image processing |
-| MediaPipe           | Hand landmark detection             |
-| PySerial            | Serial communication with ESP32     |
-| NumPy               | Numerical processing                |
-| MediaPipe Tasks API | Hand Landmarker implementation      |
+| Technology | Purpose |
+|---|---|
+| Python | Main programming language |
+| OpenCV | Camera capture and image processing |
+| MediaPipe | Hand landmark detection |
+| PySerial | Serial communication with ESP32 |
+| NumPy | Numerical processing |
+| MediaPipe Tasks API | Hand Landmarker implementation |
 
 ## 🔧 Hardware
 
-| Component               |    Quantity |
-| ----------------------- | ----------: |
-| ESP32 Development Board |           1 |
-| LED                     |           5 |
-| 1kΩ Resistor            |           5 |
-| Breadboard              |           1 |
-| Jumper Wires            | As required |
-| USB Cable               |           1 |
-| Laptop Webcam           |           1 |
+| Component | Quantity |
+|---|---:|
+| ESP32 Development Board | 1 |
+| LED | 5 |
+| 1kΩ Resistor | 5 |
+| Breadboard | 1 |
+| Jumper Wires | As required |
+| USB Cable | 1 |
+| Laptop Webcam | 1 |
 
 ---
 
@@ -184,10 +141,8 @@ Corresponding LED
               │                │                │
               └────────────────┬───────────────┘
                                │
-                    ┌──────────┴───────────┐
-                    │       LED 4 / 5       │
-                    └───────────────────────┘
-```
+                         LED 4 / LED 5
+````
 
 ---
 
@@ -315,32 +270,30 @@ Only **one LED is ON at a time**.
 |            4 | FOUR    | LED 4        |
 |            5 | FIVE    | LED 5        |
 
-Example:
-
 ```text
+✊  0 Fingers
+     ↓
+All LEDs OFF
+
 ☝️  1 Finger
      ↓
-   LED 1 ON
+LED 1 ON
 
 ✌️  2 Fingers
      ↓
-   LED 2 ON
+LED 2 ON
 
 🤟  3 Fingers
      ↓
-   LED 3 ON
+LED 3 ON
 
 🖖  4 Fingers
      ↓
-   LED 4 ON
+LED 4 ON
 
 🖐️  5 Fingers
      ↓
-   LED 5 ON
-
-✊  0 Fingers
-     ↓
-   All LEDs OFF
+LED 5 ON
 ```
 
 ---
@@ -368,16 +321,14 @@ Each LED is connected through a **1kΩ current-limiting resistor**.
 ```text
 HandTrackingSystem/
 │
+├── demo/
+│   └── hand_tracking_demo.mp4
+│
 ├── hand_tracking.py
-│
 ├── camera_test.py
-│
 ├── serial_test.py
-│
 ├── hand_tracking_backup.py
-│
 ├── requirements.txt
-│
 ├── .gitignore
 │
 ├── esp/
@@ -397,8 +348,6 @@ HandTrackingSystem/
 ```bash
 git clone https://github.com/shikha92366/HandTrackingSystem.git
 ```
-
-Move into the project directory:
 
 ```bash
 cd HandTrackingSystem
@@ -426,7 +375,7 @@ venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-The required Python libraries are:
+Required libraries:
 
 ```text
 mediapipe
@@ -465,7 +414,7 @@ BaseOptions(model_asset_path="hand_landmarker.task")
 
 # 🔧 ESP32 Setup
 
-## 1. Open Arduino IDE
+## 1️⃣ Open Arduino IDE
 
 Open:
 
@@ -473,19 +422,13 @@ Open:
 esp/esp32_led_controller.ino
 ```
 
----
-
-## 2. Select ESP32 Board
-
-In Arduino IDE select:
+## 2️⃣ Select ESP32 Board
 
 ```text
 Board → ESP32 Dev Module
 ```
 
----
-
-## 3. Select COM Port
+## 3️⃣ Select COM Port
 
 Select the COM port corresponding to your ESP32.
 
@@ -495,11 +438,7 @@ Example:
 COM3
 ```
 
----
-
-## 4. Upload the Program
-
-Upload the following ESP32 controller program:
+## 4️⃣ Upload the Program
 
 ```cpp
 const int leds[] = {25, 26, 27, 32, 33};
@@ -551,8 +490,6 @@ The webcam window will open.
 
 Show your hand in front of the camera.
 
-The system will:
-
 ```text
 Detect Hand
     ↓
@@ -583,7 +520,7 @@ to exit the application.
 
 # 🖥️ Real-Time Interface
 
-The application displays information such as:
+The application displays:
 
 ```text
 FPS
@@ -597,13 +534,11 @@ Raw Count
 Stable Gesture
 ```
 
-The hand landmarks and connections are also displayed directly on the camera feed.
+The hand landmarks and connections are displayed directly on the camera feed.
 
 ---
 
 # 🧪 Testing Utilities
-
-The project also contains utility programs for testing individual components.
 
 ### Camera Test
 
@@ -648,7 +583,7 @@ Used to test serial communication between the laptop and ESP32.
                      │
                      ▼
               Finger Count
-                0 → 5
+                   0 → 5
                      │
                      ▼
            Gesture Stabilization
@@ -663,7 +598,7 @@ Used to test serial communication between the laptop and ESP32.
                   ESP32
                      │
                      ▼
-             LED Controller
+              LED Controller
                      │
           ┌──────────┼──────────┐
           ▼          ▼          ▼
@@ -691,8 +626,6 @@ This project demonstrates the integration of **Computer Vision and Embedded Syst
 ---
 
 # 🔮 Future Improvements
-
-Possible future improvements include:
 
 * Multiple-hand tracking
 * More advanced gesture recognition
@@ -744,9 +677,7 @@ Through this project, the following concepts were implemented:
 
 # 🔗 Repository
 
-GitHub:
-
-[https://github.com/shikha92366/HandTrackingSystem](https://github.com/shikha92366/HandTrackingSystem)
+[GitHub Repository](https://github.com/shikha92366/HandTrackingSystem)
 
 ---
 
