@@ -1,3 +1,5 @@
+# ✋ Hand Tracking System Using Python & Computer Vision
+
 ### AI-Based Hand Gesture Recognition and ESP32 LED Control
 
 An interactive computer-vision project that detects hand gestures in real time using **Python, OpenCV, and MediaPipe**, identifies the number of raised fingers, and communicates the detected gesture to an **ESP32** through serial communication.
@@ -778,4 +780,3 @@ Artificial Intelligence
 ⭐ If you found this project interesting, consider giving the repository a star!
 
 </p>
-```
