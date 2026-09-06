@@ -77,14 +77,6 @@ The detected finger count is stabilized and transmitted to an **ESP32 through US
 
 ---
 
-# 📸 Project Gallery
-
-### 🎥 Project Demonstration
-
-[https://github.com/user-attachments/assets/7c522c67-0783-40a0-829b-d96885ade400](https://github.com/user-attachments/assets/7c522c67-0783-40a0-829b-d96885ade400)
-
----
-
 # 🛠 Tech Stack
 
 ## 💻 Software
