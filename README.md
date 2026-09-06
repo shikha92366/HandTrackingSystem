@@ -1,30 +1,79 @@
-#  Hand Tracking System Using Python & Computer Vision
 
-### AI-Based Hand Gesture Recognition and ESP32 LED Control
+<div align="center">
 
-An interactive computer-vision project that detects hand gestures in real time using **Python, OpenCV, and MediaPipe**, identifies the number of raised fingers, and communicates the detected gesture to an **ESP32** through serial communication.
+# ✋ Hand Tracking System
 
-The ESP32 then controls **5 LEDs**, where each finger count corresponds to one specific LED.
+### AI-Based Hand Gesture Recognition & ESP32 LED Control
+
+An interactive computer-vision and embedded systems project that detects hand gestures in real time using Python, OpenCV, and MediaPipe, and controls LEDs through an ESP32 using serial communication.
+
+</div>
+
+---
+
+<div align="center">
+
+### 🎥 Project Demonstration
+
+https://github.com/user-attachments/assets/7c522c67-0783-40a0-829b-d96885ade400
+
+</div>
+
+---
+
+<div align="center">
+
+**Computer Vision • Python • MediaPipe • OpenCV • ESP32 • Embedded Systems**
+
+</div>
+
+<p align="center">
+
+<img src="https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python&logoColor=white">
+<img src="https://img.shields.io/badge/OpenCV-Computer%20Vision-red?style=for-the-badge&logo=opencv&logoColor=white">
+<img src="https://img.shields.io/badge/MediaPipe-Hand%20Tracking-orange?style=for-the-badge">
+<img src="https://img.shields.io/badge/ESP32-Embedded%20Systems-black?style=for-the-badge&logo=espressif&logoColor=white">
+<img src="https://img.shields.io/badge/PySerial-Serial%20Communication-green?style=for-the-badge">
+<img src="https://img.shields.io/badge/Arduino%20IDE-ESP32-blue?style=for-the-badge&logo=arduino&logoColor=white">
+
+</p>
 
 ---
 
 # 📖 Overview
 
-The **Hand Tracking System** combines computer vision, hand landmark detection, Python programming, and embedded hardware control into one real-time system.
+The **Hand Tracking System** combines computer vision and embedded hardware to create a real-time gesture-controlled LED system.
 
-A laptop camera captures the user's hand, while **MediaPipe Hand Landmarker** detects **21 hand landmarks**. The Python program analyzes these landmarks to determine the number of raised fingers from **0 to 5**.
+A laptop camera captures the user's hand. **MediaPipe Hand Landmarker** detects 21 hand landmarks, which are analyzed using Python and OpenCV to determine the number of raised fingers.
 
-The detected gesture is displayed on the screen along with:
+The detected finger count is stabilized and transmitted to an **ESP32 through USB serial communication**. The ESP32 then activates the corresponding LED.
 
-- Hand type
-- Finger status
-- Finger count
-- Stable gesture
-- FPS
+### ✋ Gesture Recognition
 
-The recognized gesture is then transmitted from Python to the **ESP32 through USB serial communication**.
+```text
+0 Fingers → All LEDs OFF
+1 Finger  → LED 1 ON
+2 Fingers → LED 2 ON
+3 Fingers → LED 3 ON
+4 Fingers → LED 4 ON
+5 Fingers → LED 5 ON
+````
 
-The ESP32 receives the finger count and activates the corresponding LED.
+---
+
+# ✨ Key Features
+
+* 🖐️ Real-time hand tracking
+* 🎯 21 hand landmark detection
+* 👈👉 Left and right hand identification
+* ☝️ Finger detection and counting
+* 🔢 Gesture recognition from 0–5 fingers
+* 🧠 Gesture stabilization
+* 📊 Real-time FPS display
+* 🔌 USB serial communication
+* 🤖 ESP32 integration
+* 💡 Individual LED control
+* ⚡ Real-time hardware response
 
 ---
 
@@ -32,29 +81,7 @@ The ESP32 receives the finger count and activates the corresponding LED.
 
 ### 🎥 Project Demonstration
 
-The following video demonstrates the complete working of the Hand Tracking System, including real-time hand gesture detection, finger counting, serial communication, and ESP32 LED control.
-
-https://github.com/user-attachments/assets/7c522c67-0783-40a0-829b-d96885ade400
-
-
-
----
-
-# ✨ Key Features
-
-- 🖐️ Real-time hand tracking
-- 🎯 Detection of 21 hand landmarks
-- 👈👉 Left and right hand identification
-- ☝️ Real-time finger detection
-- 🔢 Finger counting from 0 to 5
-- 🧠 Gesture stabilization using consecutive frames
-- 📊 Real-time FPS counter
-- 🖥️ Visual gesture information on screen
-- 🔌 Serial communication with ESP32
-- 💡 Control of 5 LEDs
-- ⚡ Real-time hardware response
-- 🐍 Python-based computer vision
-- 🤖 MediaPipe hand landmark detection
+[https://github.com/user-attachments/assets/7c522c67-0783-40a0-829b-d96885ade400](https://github.com/user-attachments/assets/7c522c67-0783-40a0-829b-d96885ade400)
 
 ---
 
@@ -62,132 +89,70 @@ https://github.com/user-attachments/assets/7c522c67-0783-40a0-829b-d96885ade400
 
 ## 💻 Software
 
-| Technology | Purpose |
-|---|---|
-| Python | Main programming language |
-| OpenCV | Camera capture and image processing |
-| MediaPipe | Hand landmark detection |
-| PySerial | Serial communication with ESP32 |
-| NumPy | Numerical processing |
-| MediaPipe Tasks API | Hand Landmarker implementation |
+| Technology  | Purpose                             |
+| ----------- | ----------------------------------- |
+| Python      | Main programming language           |
+| OpenCV      | Camera capture and image processing |
+| MediaPipe   | Hand landmark detection             |
+| PySerial    | Serial communication                |
+| NumPy       | Numerical processing                |
+| Arduino IDE | ESP32 programming                   |
 
 ## 🔧 Hardware
 
-| Component | Quantity |
-|---|---:|
-| ESP32 Development Board | 1 |
-| LED | 5 |
-| 1kΩ Resistor | 5 |
-| Breadboard | 1 |
-| Jumper Wires | As required |
-| USB Cable | 1 |
-| Laptop Webcam | 1 |
+| Component               |    Quantity |
+| ----------------------- | ----------: |
+| ESP32 Development Board |           1 |
+| LED                     |           5 |
+| 1kΩ Resistor            |           5 |
+| Breadboard              |           1 |
+| Jumper Wires            | As required |
+| USB Cable               |           1 |
+| Laptop Webcam           |           1 |
 
 ---
 
 # 🏗️ System Architecture
 
 ```text
-                    ┌──────────────────────┐
-                    │     Laptop Camera    │
-                    └──────────┬───────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │       OpenCV         │
-                    │  Image Acquisition   │
-                    └──────────┬───────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │      MediaPipe       │
-                    │   Hand Landmarker    │
-                    └──────────┬───────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │  21 Hand Landmarks   │
-                    └──────────┬───────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │   Finger Detection   │
-                    │     & Counting       │
-                    └──────────┬───────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │ Gesture Stabilization│
-                    └──────────┬───────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │   Python / PySerial  │
-                    │ Serial Communication │
-                    └──────────┬───────────┘
-                               │
-                         USB Serial
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │        ESP32         │
-                    │  Gesture Processing  │
-                    └──────────┬───────────┘
-                               │
-              ┌────────────────┼────────────────┐
-              │                │                │
-              ▼                ▼                ▼
-           LED 1            LED 2            LED 3
-              │                │                │
-              └────────────────┬───────────────┘
-                               │
-                         LED 4 / LED 5
-````
+Laptop Camera
+      ↓
+    OpenCV
+      ↓
+MediaPipe Hand Landmarker
+      ↓
+21 Hand Landmarks
+      ↓
+Finger Detection & Counting
+      ↓
+Gesture Stabilization
+      ↓
+Python / PySerial
+      ↓
+ USB Serial
+      ↓
+    ESP32
+      ↓
+LED Controller
+      ↓
+Corresponding LED
+```
 
 ---
 
 # ⚙️ Working Modules
 
-## 1️⃣ Camera Module
+## 1️⃣ Hand Detection
 
-The laptop webcam continuously captures frames using OpenCV.
+The laptop webcam captures the user's hand using OpenCV.
 
-```python
-cap = cv2.VideoCapture(0)
-```
+## 2️⃣ Landmark Detection
 
-The captured frames are processed in real time.
+MediaPipe detects **21 landmarks** on the hand.
 
----
+## 3️⃣ Finger Detection
 
-## 2️⃣ Hand Landmark Detection
-
-The project uses the **MediaPipe Hand Landmarker** to detect the hand.
-
-MediaPipe provides **21 landmarks** for a detected hand.
-
-These landmarks are used to determine the position of different parts of the hand and fingers.
-
----
-
-## 3️⃣ Hand Identification
-
-The system identifies whether the detected hand is:
-
-```text
-Left Hand
-Right Hand
-```
-
-This information is displayed on the computer-vision interface.
-
----
-
-## 4️⃣ Finger Detection
-
-The program analyzes landmark positions to determine whether individual fingers are raised.
-
-The five fingers are represented as:
+The landmark positions are analyzed to determine whether each finger is raised.
 
 ```text
 THU → Thumb
@@ -197,122 +162,61 @@ RIN → Ring
 PIN → Pinky
 ```
 
-The interface displays the status of each finger.
+## 4️⃣ Finger Counting
 
----
-
-## 5️⃣ Finger Counting
-
-The detected fingers are counted and classified into six gestures:
+The system recognizes:
 
 ```text
-0 → ZERO
-1 → ONE
-2 → TWO
-3 → THREE
-4 → FOUR
-5 → FIVE
+ZERO
+ONE
+TWO
+THREE
+FOUR
+FIVE
 ```
 
----
+## 5️⃣ Gesture Stabilization
 
-## 6️⃣ Gesture Stabilization
+The gesture must remain consistent across consecutive frames before it is considered stable. This helps prevent unwanted gesture switching caused by small hand movements.
 
-To avoid unstable gesture changes caused by small movements of the hand or camera, the system checks consecutive frames.
+## 6️⃣ Serial Communication
 
-A gesture must remain consistent for multiple frames before being treated as the stable gesture.
-
-This reduces unwanted rapid switching between gestures.
-
----
-
-## 7️⃣ Serial Communication
-
-Once a stable gesture is detected, Python sends the corresponding finger count to the ESP32 using **PySerial**.
-
-Communication settings:
+The stable finger count is sent from Python to the ESP32 at:
 
 ```text
-Port      : COM3
-Baud Rate : 115200
+Baud Rate: 115200
 ```
 
-The command is transmitted through USB serial communication.
+## 7️⃣ LED Control
 
----
-
-## 8️⃣ ESP32 LED Controller
-
-The ESP32 receives the finger count and controls five LEDs.
-
-The LED pins used are:
-
-| LED   | ESP32 GPIO |
-| ----- | ---------: |
-| LED 1 |    GPIO 25 |
-| LED 2 |    GPIO 26 |
-| LED 3 |    GPIO 27 |
-| LED 4 |    GPIO 32 |
-| LED 5 |    GPIO 33 |
+The ESP32 receives the finger count and switches on only the corresponding LED.
 
 ---
 
 # 💡 Gesture → LED Mapping
 
-Only **one LED is ON at a time**.
-
-| Finger Count | Gesture | LED          |
-| -----------: | ------- | ------------ |
-|            0 | ZERO    | All LEDs OFF |
-|            1 | ONE     | LED 1        |
-|            2 | TWO     | LED 2        |
-|            3 | THREE   | LED 3        |
-|            4 | FOUR    | LED 4        |
-|            5 | FIVE    | LED 5        |
-
-```text
-✊  0 Fingers
-     ↓
-All LEDs OFF
-
-☝️  1 Finger
-     ↓
-LED 1 ON
-
-✌️  2 Fingers
-     ↓
-LED 2 ON
-
-🤟  3 Fingers
-     ↓
-LED 3 ON
-
-🖖  4 Fingers
-     ↓
-LED 4 ON
-
-🖐️  5 Fingers
-     ↓
-LED 5 ON
-```
+| Finger Count | Gesture  | Output       |
+| -----------: | -------- | ------------ |
+|            0 | ✊ ZERO   | All LEDs OFF |
+|            1 | ☝️ ONE   | LED 1 ON     |
+|            2 | ✌️ TWO   | LED 2 ON     |
+|            3 | 🤟 THREE | LED 3 ON     |
+|            4 | 🖖 FOUR  | LED 4 ON     |
+|            5 | 🖐️ FIVE | LED 5 ON     |
 
 ---
 
 # 🔌 ESP32 Pin Configuration
 
-```text
-LED 1 → GPIO 25 → 1kΩ Resistor → LED → GND
+| LED   |    GPIO |
+| ----- | ------: |
+| LED 1 | GPIO 25 |
+| LED 2 | GPIO 26 |
+| LED 3 | GPIO 27 |
+| LED 4 | GPIO 32 |
+| LED 5 | GPIO 33 |
 
-LED 2 → GPIO 26 → 1kΩ Resistor → LED → GND
-
-LED 3 → GPIO 27 → 1kΩ Resistor → LED → GND
-
-LED 4 → GPIO 32 → 1kΩ Resistor → LED → GND
-
-LED 5 → GPIO 33 → 1kΩ Resistor → LED → GND
-```
-
-Each LED is connected through a **1kΩ current-limiting resistor**.
+Each LED is connected through a **1kΩ resistor**.
 
 ---
 
@@ -324,64 +228,47 @@ HandTrackingSystem/
 ├── demo/
 │   └── hand_tracking_demo.mp4
 │
-├── hand_tracking.py
-├── camera_test.py
-├── serial_test.py
-├── hand_tracking_backup.py
-├── requirements.txt
-├── .gitignore
-│
 ├── esp/
 │   └── esp32_led_controller.ino
 │
+├── hand_tracking.py
+├── hand_tracking_backup.py
+├── camera_test.py
+├── serial_test.py
+├── requirements.txt
+├── .gitignore
 └── hand_landmarker.task
 ```
 
-> `hand_landmarker.task` is not included in the GitHub repository because the model file is excluded through `.gitignore`.
+> `hand_landmarker.task` is excluded from the GitHub repository through `.gitignore`.
 
 ---
 
 # 📦 Installation
 
-## 1️⃣ Clone the Repository
+### Clone the repository
 
 ```bash
 git clone https://github.com/shikha92366/HandTrackingSystem.git
-```
-
-```bash
 cd HandTrackingSystem
 ```
 
----
-
-## 2️⃣ Create a Virtual Environment
+### Create virtual environment
 
 ```bash
 python -m venv venv
 ```
 
-Activate it on Windows:
+### Activate virtual environment
 
 ```bash
 venv\Scripts\activate
 ```
 
----
-
-## 3️⃣ Install Dependencies
+### Install dependencies
 
 ```bash
 pip install -r requirements.txt
-```
-
-Required libraries:
-
-```text
-mediapipe
-opencv-contrib-python
-numpy
-pyserial
 ```
 
 ---
@@ -394,7 +281,7 @@ The project uses the MediaPipe Hand Landmarker model:
 hand_landmarker.task
 ```
 
-Place the model file in the project root directory:
+Place the model file in the project root:
 
 ```text
 HandTrackingSystem/
@@ -404,109 +291,27 @@ HandTrackingSystem/
 └── ...
 ```
 
-The Python program loads the model using:
-
-```python
-BaseOptions(model_asset_path="hand_landmarker.task")
-```
-
 ---
 
 # 🔧 ESP32 Setup
 
-## 1️⃣ Open Arduino IDE
-
-Open:
-
-```text
-esp/esp32_led_controller.ino
-```
-
-## 2️⃣ Select ESP32 Board
-
-```text
-Board → ESP32 Dev Module
-```
-
-## 3️⃣ Select COM Port
-
-Select the COM port corresponding to your ESP32.
-
-Example:
-
-```text
-COM3
-```
-
-## 4️⃣ Upload the Program
-
-```cpp
-const int leds[] = {25, 26, 27, 32, 33};
-
-void setup() {
-  Serial.begin(115200);
-
-  for (int i = 0; i < 5; i++) {
-    pinMode(leds[i], OUTPUT);
-    digitalWrite(leds[i], LOW);
-  }
-}
-
-void loop() {
-  if (Serial.available()) {
-
-    String command = Serial.readStringUntil('\n');
-    command.trim();
-
-    int fingerCount = command.toInt();
-
-    // Turn all LEDs OFF
-    for (int i = 0; i < 5; i++) {
-      digitalWrite(leds[i], LOW);
-    }
-
-    // Turn ON only the corresponding LED
-    if (fingerCount >= 1 && fingerCount <= 5) {
-      digitalWrite(leds[fingerCount - 1], HIGH);
-    }
-
-    Serial.print("Received: ");
-    Serial.println(fingerCount);
-  }
-}
-```
+1. Open `esp/esp32_led_controller.ino` in Arduino IDE.
+2. Select **ESP32 Dev Module**.
+3. Select the ESP32 COM port.
+4. Upload the program.
+5. Close Arduino Serial Monitor before running Python.
 
 ---
 
-# ▶️ Running the Project
+# ▶️ Run the Project
 
-After connecting the ESP32:
+Connect the ESP32 and run:
 
 ```bash
 python hand_tracking.py
 ```
 
-The webcam window will open.
-
-Show your hand in front of the camera.
-
-```text
-Detect Hand
-    ↓
-Detect 21 Landmarks
-    ↓
-Identify Fingers
-    ↓
-Count Fingers
-    ↓
-Stabilize Gesture
-    ↓
-Send Finger Count
-    ↓
-ESP32 Receives Data
-    ↓
-Corresponding LED Turns ON
-```
+The webcam will open and the system will begin detecting hand gestures.
 
 Press:
 
@@ -514,27 +319,7 @@ Press:
 Q
 ```
 
-to exit the application.
-
----
-
-# 🖥️ Real-Time Interface
-
-The application displays:
-
-```text
-FPS
-Hand Type
-THU
-IND
-MID
-RIN
-PIN
-Raw Count
-Stable Gesture
-```
-
-The hand landmarks and connections are displayed directly on the camera feed.
+to exit.
 
 ---
 
@@ -546,132 +331,50 @@ The hand landmarks and connections are displayed directly on the camera feed.
 python camera_test.py
 ```
 
-Used to verify that the laptop camera can be accessed successfully.
-
 ### Serial Test
 
 ```bash
 python serial_test.py
 ```
 
-Used to test serial communication between the laptop and ESP32.
-
----
-
-# 🔄 Complete Working Flow
-
-```text
-                    USER
-                     │
-                     ▼
-                Hand Gesture
-                     │
-                     ▼
-              Laptop Webcam
-                     │
-                     ▼
-                  OpenCV
-                     │
-                     ▼
-              MediaPipe Model
-                     │
-                     ▼
-             21 Hand Landmarks
-                     │
-                     ▼
-             Finger Detection
-                     │
-                     ▼
-              Finger Count
-                   0 → 5
-                     │
-                     ▼
-           Gesture Stabilization
-                     │
-                     ▼
-                 PySerial
-                     │
-                     ▼
-              USB Serial Link
-                     │
-                     ▼
-                  ESP32
-                     │
-                     ▼
-              LED Controller
-                     │
-          ┌──────────┼──────────┐
-          ▼          ▼          ▼
-        LED 1      LED 2      LED 3
-          │          │          │
-          └──────────┼──────────┘
-                     │
-                  LED 4 / 5
-```
-
 ---
 
 # 🚀 Applications
 
-This project demonstrates the integration of **Computer Vision and Embedded Systems** and can be extended for:
-
 * 🤖 Gesture-controlled robotics
 * 🏠 Smart home interfaces
-* ♿ Contactless accessibility systems
 * 🎮 Gesture-based control systems
 * 🖥️ Human-computer interaction
-* 🔌 Computer vision controlled hardware
-* 📡 IoT and embedded control applications
+* 🔌 Computer-vision controlled hardware
+* 📡 IoT and embedded applications
 
 ---
 
 # 🔮 Future Improvements
 
 * Multiple-hand tracking
-* More advanced gesture recognition
-* Wireless communication using Wi-Fi/Bluetooth
-* Controlling motors using gestures
-* Gesture-controlled robotic arms
-* IoT dashboard integration
+* Advanced gesture recognition
+* Wireless ESP32 communication
+* Gesture-controlled motors
+* Robotic arm control
+* IoT integration
 * Custom gesture commands
-* Voice + gesture hybrid control
-* Mobile application integration
-
----
-
-# 🧰 Technologies Used
-
-```text
-Python
-OpenCV
-MediaPipe
-NumPy
-PySerial
-ESP32
-Arduino IDE
-USB Serial Communication
-Computer Vision
-Embedded Systems
-```
 
 ---
 
 # 📌 Learning Outcomes
 
-Through this project, the following concepts were implemented:
-
 * Python programming
 * Computer vision
-* OpenCV camera handling
-* MediaPipe hand landmark detection
-* Real-time image processing
-* Hand gesture recognition
+* OpenCV
+* MediaPipe
+* Hand landmark detection
+* Gesture recognition
 * Serial communication
 * ESP32 programming
 * GPIO control
 * LED interfacing
 * Hardware-software integration
-* Debugging and testing
 
 ---
 
@@ -685,17 +388,9 @@ Through this project, the following concepts were implemented:
 
 ### Shikha
 
-B.Tech — Electronics & Communication Engineering
+**B.Tech — Electronics & Communication Engineering**
 
-Interested in:
-
-```text
-Embedded Systems
-Computer Vision
-IoT
-Robotics
-Artificial Intelligence
-```
+**Interests:** Embedded Systems • Computer Vision • IoT • Robotics • Artificial Intelligence
 
 ---
 
